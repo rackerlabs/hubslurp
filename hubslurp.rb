@@ -114,7 +114,8 @@ scheduler.interval '5m' do
             url: issue.url,
             title: issue.title,
             origin_id: issue.id,
-            incident_date: issue.created_at.to_i
+            incident_date: issue.created_at.to_i,
+            tags: repo.tags
           },
           3600
         )
