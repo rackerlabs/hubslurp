@@ -47,7 +47,6 @@ def configure
 
   @logger.info "Authenticating to Rackspace as #{@config['rackspace_username']}."
   service = Fog::Rackspace::Queues.new(
-    provider: 'rackspace',
     rackspace_username: @config['rackspace_username'],
     rackspace_api_key: @config['rackspace_api_key'],
     rackspace_region: @config['rackspace_region']
