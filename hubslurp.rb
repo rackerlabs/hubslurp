@@ -69,6 +69,9 @@ def configure
   @repositories = @config['repositories'].map do |hash|
     Repository.from_h hash
   end
+
+  # Remember this configuration so we don't re-authenticate unnecessarily.
+  @prior = @config
 end
 
 configure
