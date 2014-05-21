@@ -100,7 +100,7 @@ scheduler.interval '5m' do
     Regexp::IGNORECASE
   )
 
-  @config['repositories'].each do |repo|
+  @repositories.each do |repo|
     @logger.debug "Polling for issues in #{repo.name} since #{@last_check}."
 
     @octokit.list_issues(repo, since: @last_check).each do |issue|
