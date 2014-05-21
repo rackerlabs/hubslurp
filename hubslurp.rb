@@ -76,6 +76,7 @@ configure
 # Main loop
 
 @logger.info "Launching HubSlurp version #{@version}."
+@logger.debug 'Debug logging is enabled.'
 
 scheduler = Rufus::Scheduler.new
 
