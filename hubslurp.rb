@@ -35,7 +35,7 @@ def configure
   @config = YAML.load_file(CONFIG_PATH)
   return if @config == @prior
 
-  @version = File.read(VERSION_PATH)
+  @version = File.read(VERSION_PATH).chomp
 
   # Log4r
 
