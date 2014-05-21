@@ -1,0 +1,19 @@
+---
+github_access_token: abcdef
+
+rackspace_username: username
+rackspace_api_key: asdfasdf
+rackspace_region: dfw
+
+queue_name: peril_events
+log_level: INFO
+
+keywords:
+- rackspace
+- openstack
+
+repositories:
+- name: fog/fog
+  tags:
+  - fog
+  - ruby
