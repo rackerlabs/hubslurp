@@ -80,7 +80,7 @@ configure
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.interval '5m' do
+scheduler.interval(@config['interval'] || '5m') do
   @logger.debug 'Awake again.'
 
   ts = Time.now
