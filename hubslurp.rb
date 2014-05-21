@@ -104,7 +104,7 @@ scheduler.interval(@config['interval'] || '5m') do
   )
 
   @repositories.each do |repo|
-    @logger.debug "Polling for issues in #{repo.name} since #{@last_check}."
+    @logger.info "Polling for issues in #{repo.name} since #{@last_check}."
 
     @octokit.list_issues(repo.name, since: @last_check).each do |issue|
       # Check for keyword matches.
