@@ -2,6 +2,7 @@
 
 require 'fog'
 require 'octokit'
+require 'rufus-scheduler'
 require 'log4r'
 require 'yaml'
 
