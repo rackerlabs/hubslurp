@@ -103,10 +103,10 @@ scheduler.interval '5m' do
   @repositories.each do |repo|
     @logger.debug "Polling for issues in #{repo.name} since #{@last_check}."
 
-    @octokit.list_issues(repo, since: @last_check).each do |issue|
+    @octokit.list_issues(repo.name, since: @last_check).each do |issue|
       # Check for keyword matches.
       if keyword_pattern =~ issue.title || keyword_pattern =~ issue.body
-        @logger.info "#{repo}##{issue.number} contains a keyword match."
+        @logger.info "#{repo.name}##{issue.number} contains a keyword match."
 
         # Publish an event.
         @q.enqueue(
@@ -121,7 +121,7 @@ scheduler.interval '5m' do
           3600
         )
       else
-        @logger.debug "No hit in #{repo}##{issue.number}."
+        @logger.debug "No hit in #{repo.name}##{issue.number}."
       end
     end
   end
