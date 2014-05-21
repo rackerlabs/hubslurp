@@ -114,7 +114,7 @@ scheduler.interval(@config['interval'] || '5m') do
         # Publish an event.
         @q.enqueue(
           {
-            reporter: "hubslurp-#{VERSION}",
+            reporter: "hubslurp-#{@version}",
             url: issue.url,
             title: issue.title,
             origin_id: issue.id,
